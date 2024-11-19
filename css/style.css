@@ -51,37 +51,75 @@
     font-size: 24px;
     color: #333;
   }
+
+
 /* Navbar Styling */
 .navbar {
-    background-color: #1e73be;
-    padding: 15px;
-  }
-  
-  .navbar ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-  }
-  
-  .navbar ul li {
-    display: inline;
-  }
-  
-  .navbar a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  
-  .navbar a i {
-    font-size: 20px; /* Icon size */
-  }
-  
+  background-color: #1e73be;
+  padding: 15px;
+}
+
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.navbar ul li {
+  position: relative;
+}
+
+.navbar ul li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #6c757d;
+  padding: 10px 0;
+  border-radius: 5px;
+  list-style-type: none;
+  margin: 0;
+  min-width: 300px; /* Adjust the width as needed */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
+}
+
+.navbar ul li:hover ul {
+  display: block;
+}
+
+.navbar ul li ul li {
+  display: block;
+  padding: 10px 15px;
+  border-bottom: 1px solid #ffffff; /* Adds a line between items */
+  text-align: left; /* Aligns text to the right for Arabic */
+  font-size: 16px;
+}
+
+.navbar ul li ul li:last-child {
+  border-bottom: none; /* Removes border for the last item */
+}
+
+.navbar ul li ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar a i {
+  font-size: 20px;
+}
+
 /* Focus and Commitment Section */
 .focus-commitment {
     background-image: url('../images/img1.jpg'); /* Use img1.jpg as background */
