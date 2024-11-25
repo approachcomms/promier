@@ -216,6 +216,43 @@
     font-size: 1.1em;
     font-style: italic;
   }
+
+
+
+  
+/* Partners Section */
+.partners-section {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #fff; /* White background */
+}
+
+.partners-section h2 {
+  font-size: 2.5em;
+  color: #1e73be; /* Blue title */
+  font-weight: bold;
+  margin-bottom: 30px; /* Space below title */
+}
+
+/* Grid for Partner Logos */
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 logos per row */
+  gap: 40px; /* Space between logos */
+  justify-items: center; /* Center logos in their grid cells */
+}
+
+.partners-grid img {
+  width: 200px; /* Consistent logo size */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Prevent distortion */
+  transition: transform 0.3s ease; /* Add hover effect */
+}
+
+.partners-grid img:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
   
   /* Get in Touch Banner Styling */
   .get-in-touch-banner {
