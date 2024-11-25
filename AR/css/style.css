@@ -14,106 +14,124 @@
     font-family: Arial, sans-serif;
     color: #333;
   }
-  
+  @media (max-width: 768px) {
+    body {
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 480px) {
+    body {
+      font-size: 12px;
+    }
+  }
 /* Header Styling */
 .main-header {
-    background-color: #fff;
-    padding: 20px 50px;
-    border-bottom: 1px solid #e0e0e0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background-color: #fff;
+  padding: 20px 50px;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 60px;
+  object-fit: contain;
+}
+
+.header-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-info {
+  display: flex;
+  gap: 40px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: right;
+}
+
+.info-item i {
+  font-size: 24px;
+  color: #333;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  /* Stack the logo and contact-info */
+  .main-header {
+    padding: 20px;
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
-  .logo img {
-    height: 60px;
-    object-fit: contain;
-  }
-  
-  /* Ensure Contact Info Aligns to the Right */
+
   .header-container {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column; /* Stack logo and contact-info */
   }
-  
+
   .contact-info {
-    display: flex;
-    gap: 40px;
-    justify-content: flex-end; /* Align to the right */
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 15px; /* Add spacing between logo and contact info */
   }
-  
+
   .info-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-align: right; /* Ensure text is aligned to the right */
+    text-align: left;
   }
-  
+}
+
+@media (max-width: 480px) {
+  /* Adjust padding and font sizes for mobile */
+  .main-header {
+    padding: 15px;
+  }
+
+  .contact-info {
+    gap: 15px;
+  }
+
   .info-item i {
-    font-size: 24px;
-    color: #333;
+    font-size: 20px;
   }
+
+  .info-item p {
+    font-size: 14px;
+  }
+}
+
+
+
 /* Navbar Styling */
-
-
 .navbar {
   background-color: #1e73be;
   padding: 15px;
+  position: relative;
 }
 
 .navbar ul {
-  list-style-type: none;
+  list-style: none;
   display: flex;
   justify-content: center;
-  gap: 30px;
-  direction: rtl;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .navbar ul li {
   position: relative;
 }
 
-.navbar ul li ul {
-  display: none;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background-color: #6c757d;
-  padding: 10px 0;
-  border-radius: 5px;
-  list-style-type: none;
-  margin: 0;
-  min-width: 300px; /* Adjust the width as needed */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
-}
-
-.navbar ul li:hover ul {
-  display: block;
-}
-
-.navbar ul li ul li {
-  display: block;
-  padding: 10px 15px;
-  border-bottom: 1px solid #ffffff; /* Adds a line between items */
-  text-align: right; /* Aligns text to the right for Arabic */
-  font-size: 16px;
-}
-
-.navbar ul li ul li:last-child {
-  border-bottom: none; /* Removes border for the last item */
-}
-
-.navbar ul li ul li a {
+.navbar ul li a {
   color: white;
   text-decoration: none;
-  display: block;
-}
-
-.navbar a {
-  text-decoration: none;
-  color: white;
   font-size: 18px;
   font-weight: 500;
   display: flex;
@@ -121,10 +139,75 @@
   gap: 8px;
 }
 
-.navbar a i {
-  font-size: 20px;
+.navbar ul li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #6c757d;
+  padding: 10px 0;
+  border-radius: 5px;
+  list-style: none;
+  min-width: 250px;
 }
 
+.navbar ul li:hover ul {
+  display: block;
+}
+
+.navbar ul li ul li a {
+  padding: 10px 15px;
+  color: white;
+  text-align: left;
+  display: block;
+  font-size: 16px;
+}
+
+.navbar ul li ul li a:hover {
+  background-color: #5a6268;
+}
+
+/* Mobile Responsive Styles */
+.menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  /* Show hamburger menu */
+  .menu-icon {
+    display: block;
+  }
+
+  /* Collapse navbar */
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .navbar ul li {
+    text-align: center;
+  }
+
+  /* Expand when toggle is checked */
+  .menu-toggle:checked + .menu-icon + ul {
+    display: flex;
+  }
+
+  /* Dropdown positioning for mobile */
+  .navbar ul li ul {
+    position: static;
+    box-shadow: none;
+    margin-top: 10px;
+  }
+}
 
 /* Focus and Commitment Section */
 .focus-commitment {
@@ -168,8 +251,8 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding-left: 200px; /* Position text away from the left edge */
-    text-align: left;
+    padding-right: 200px; /* Position text away from the left edge */
+    text-align: right;
     color: #333; /* Default text color */
   }
   
@@ -273,24 +356,60 @@
   margin-bottom: 30px; /* Space below title */
 }
 
-/* Grid for Partner Logos */
+/* Grid Styling */
 .partners-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 logos per row */
-  gap: 40px; /* Space between logos */
-  justify-items: center; /* Center logos in their grid cells */
+  grid-template-columns: repeat(5, 1fr); /* 5 images per row on desktop */
+  gap: 20px;
+  justify-items: center; /* Centers items horizontally */
+  align-items: center; /* Centers items vertically */
 }
 
 .partners-grid img {
-  width: 200px; /* Consistent logo size */
+  width: 100%;
+  max-width: 150px; /* Limit image size */
   height: auto; /* Maintain aspect ratio */
-  object-fit: contain; /* Prevent distortion */
-  transition: transform 0.3s ease; /* Add hover effect */
+  border-radius: 10px; /* Optional: Add rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add hover effect */
 }
 
 .partners-grid img:hover {
-  transform: scale(1.1); /* Slight zoom on hover */
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .partners-section h2 {
+    font-size: 2em; /* Reduce title size */
+  }
+
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 images per row on tablets */
+    gap: 15px; /* Reduce gaps */
+  }
+}
+
+@media (max-width: 480px) {
+  .partners-section {
+    padding: 30px 10px; /* Smaller padding for mobiles */
+  }
+
+  .partners-section h2 {
+    font-size: 1.8em; /* Smaller title size for mobiles */
+  }
+
+  .partners-grid {
+    grid-template-columns: 1fr; /* 1 image per row on mobiles */
+    gap: 10px; /* Smaller gap for compact screens */
+  }
+
+  .partners-grid img {
+    max-width: 100%; /* Ensure image uses full row width */
+  }
+}
+
 
 
 
@@ -312,69 +431,108 @@
   .get-in-touch-banner p {
     font-size: 1.2em;
   }
+
+
+
   
- /* Contact Form Styling */
+/* Contact Form Styling */
 .contact-form {
-    background-color: white;
-    padding: 40px;
-    margin: 30px auto;
-    width: 80%;
-    max-width: 800px;
-    border-radius: 8px;
-    direction: rtl;
+  background-color: white;
+  padding: 40px;
+  margin: 30px auto;
+  width: 80%;
+  max-width: 800px;
+  border-radius: 8px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.form-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-field input {
+  border: none;
+  border-bottom: 1px solid #333;
+  padding: 10px;
+  font-size: 16px;
+  background: none;
+  outline: none;
+}
+
+/* Input Focus Effect */
+.form-field input:focus {
+  border-bottom: 2px solid #1e73be;
+  transition: border-color 0.3s;
+}
+
+/* Submit Button Styling */
+button {
+  background-color: #6c757d;
+  color: white;
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+}
+
+button:hover {
+  background-color: #5a6268;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .contact-form {
+    padding: 30px;
+    margin: 20px auto;
+    width: 90%; /* More width for smaller screens */
   }
-  
-  .contact-form form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
+
   .form-group {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
+    flex-direction: column; /* Stack fields vertically on tablets */
+    gap: 15px;
   }
-  
-  /* Form Field Styling */
-  .form-field {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-  
-  .form-field input {
-    border: none;
-    border-bottom: 1px solid #333;
-    padding: 10px;
-    font-size: 16px;
-    background: none;
-    outline: none;
-  }
-  
-  /* Input Focus Effect */
-  .form-field input:focus {
-    border-bottom: 2px solid #1e73be;
-    transition: border-color 0.3s;
-  }
-  
-  /* Submit Button Styling */
+
   button {
-    background-color: #6c757d;
-    color: white;
-    padding: 15px;
-    font-size: 18px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 100%;
-    text-align: center;
+    padding: 12px;
+    font-size: 16px; /* Slightly smaller for tablets */
   }
-  
-  button:hover {
-    background-color: #5a6268;
+}
+
+@media (max-width: 480px) {
+  .contact-form {
+    padding: 20px;
+    margin: 15px auto;
+    width: 95%; /* Almost full width on mobile */
   }
+
+  .form-field input {
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+
+  button {
+    font-size: 14px;
+    padding: 10px; /* Compact button styling */
+  }
+}
+
+
 
 /* Footer Styling */
 .footer {
