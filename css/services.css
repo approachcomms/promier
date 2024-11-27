@@ -1,4 +1,4 @@
-.cta-section {
+.shc-section {
     background-color: #f9f9f9; /* Light gray background */
     padding: 40px 20px;
     text-align: center; /* Center-align text */
@@ -6,12 +6,12 @@
     color: #0a1e2b; /* Dark navy color for text */
   }
   
-  .cta-section h2 {
+  .shc-section h2 {
     font-size: 1.8em; /* Larger font for main question */
     margin-bottom: 10px; /* Space between question and subtext */
 
   }
   
-  .cta-section p {
+  .shc-section p {
     font-size: 1.4em; /* Slightly smaller font for the subtext */
   }
