@@ -15,3 +15,49 @@
   .shc-section p {
     font-size: 1.4em; /* Slightly smaller font for the subtext */
   }
+
+
+  
+/* Information Squares Section */
+.information-squares {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Max 3 columns */
+  gap: 20px; /* Space between boxes */
+  justify-content: center; /* Center the entire grid */
+  padding: 40px 20px;
+  background-color: #fff; /* White background */
+}
+
+.info-box {
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background-color: #f9f9f9; /* Slightly off-white background */
+  text-align: center; /* Center text inside each box */
+}
+
+.info-box h3 {
+  font-size: 1.3em;
+  color: #1e73be; /* Blue for title */
+  margin-bottom: 10px;
+}
+
+.info-box p {
+  font-size: 1em;
+  color: #333; /* Dark text color */
+  line-height: 1.6; /* Improved readability */
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+  .information-squares {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller devices */
+  }
+}
+
+@media (max-width: 480px) {
+  .information-squares {
+    grid-template-columns: repeat(1, 1fr); /* 1 column for very small devices */
+  }
+}
