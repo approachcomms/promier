@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>برومير - قيادات المستقبل</title>
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/about.css">
+  <link rel="stylesheet" href="../css/contact-us.css">
+  <link rel="stylesheet" href="../css/services.css">
   <!-- Link to Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
@@ -37,6 +40,88 @@
 
 
   
+      <!-- Navigation Bar -->
+      <nav class="navbar">
+        <!-- Hamburger Menu for Mobile -->
+          <input type="checkbox" id="menu-toggle" class="menu-toggle">
+          <label for="menu-toggle" class="menu-icon">
+               <i class="fas fa-bars"></i>
+           </label>
+      <ul>
+        <li><a href="../index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+        <li><a href="../about-us.html"><i class="fas fa-user"></i> من نحن</a></li>
+        <li id="menu-products">
+          <a href="#"><i class="fas fa-gear"></i>خدماتنا</a>
+          <ul id="dropdown-products">
+            <li><a href="../Services/Management_Consulting.html">الاستشارات الادارية</a></li>
+            <li><a href="../Services/Financial_Consulting.html">الاستشارات المالية</a></li>
+            <li><a href="../Services/Business_Intelligence_Consulting.html">استشارات ذكاء الاعمال</a></li>
+            <li><a href="../Services/Future_Leadership.html">قيادات المستقبل</a></li>
+            <li><a href="../Services/Future_Studies.html">دراسات المستقبل</a></li>
+          </ul>
+        </li>
+        <li><a href="../partners.html"><i class="fas fa-handshake"></i>عملائنا</a></li>
+        <li><a href="../contact-us.html"><i class="fas fa-envelope"></i>اتصل بنا</a></li>
+        <li><a href="../../index.html"><i class="fas"></i> English</a></li>
+      </ul>
+      
+    </nav>
+
+    <!-- Title Section   ------------------------->
+<section class="about-title">
+  <h1>قيادات المستقبل</h1>
+</section>
+
+
+<!-- Call-to-Action Section -->
+<section class="cta-section">
+  <h2>هل تحتاج إلى مشورة خبراء في استراتيجيات الإدارة أو المالية أو ذكاء الأعمال؟</h2>
+  <p>تواصل معنا</p>
+</section>
+
+  <!-- Contact Form Section -->
+  <section class="contact-form">
+    <form>
+      <div class="form-group">
+        <div class="form-field">
+          <label for="firstName">الاسم الاول</label>
+          <input type="text" id="firstName" name="firstName" required>
+        </div>
+        <div class="form-field">
+          <label for="lastName">الاسم الاخير</label>
+          <input type="text" id="lastName" name="lastName" required>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <div class="form-field">
+          <label for="email">البريد الالكتروني</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-field">
+          <label for="phone">رقم الهاتف</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+      </div>
+  
+      
+      <div class="form-group">
+        <div class="form-field">
+          <label for="company">اسم الشركة</label>
+          <input type="text" id="company" name="company">
+        </div>
+        <div class="form-field">
+          <label for="position">العمل</label>
+          <input type="text" id="position" name="position">
+        </div>
+      </div>
+  
+      <button type="submit">ارسل</button>
+    </form>
+  </section>
+
+
+
  <!-- Footer Section -->
  <footer class="footer">
   <div class="footer-container">
